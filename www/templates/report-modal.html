@@ -1,0 +1,75 @@
+<ion-modal-view>
+
+	<ion-header-bar  class="bar bar-header bar-balanced">
+		<h1 class="title">Add new Report</h1>
+		<div class="buttons">
+			<button ng-click="closeModal()" class="button icon ion-close"></button>
+		</div>
+	</ion-header-bar>
+
+	<ion-content>
+		<form ng-submit="saveReport()">
+			
+			<div class="col">
+					<button ng-click="takePicture()"  type="button" class="button icon-left ion-camera button-dark button-block">Take a picture</button>
+				</div>
+					
+
+			<div class="padding" ng-show="report.image">
+				<img class="full-image" ng-src="{{ report.image }}" alt="image">
+			</div>
+
+			<div class="list">
+				
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Description:</span>
+					<textarea placeholder="Add a description"  ng-model="report.description"></textarea>
+					<!--<inputte type="text" placeholder="Add a description" ng-model="comic.title"> -->
+				</label>
+
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Location:</span>
+					<input type="text" placeholder="Add a location" ng-model="report.location">
+				</label>
+
+				
+
+				  <label class="item item-input item-select">
+                    <div class="input-label">
+                        Item
+                    </div>
+                    <select>
+                        <option selected>item 1</option>
+                        <option >item 2</option>
+                        <option>item 3</option>
+                    </select>
+                </label>
+
+
+				
+
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Unit:</span>
+					<input type="text" placeholder="Add unit" ng-model="report.unit">
+				</label>
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Note 1:</span>
+					<input type="text" placeholder="Add note 1" ng-model="report.note1">
+				</label>
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Note 2:</span>
+					<input type="text" placeholder="Add note 2" ng-model="report.note2">
+				</label>
+
+			</div>
+
+				
+			<div class="padding">
+				<button type="submit" class="button button-balanced button-block">Save</button>
+			</div>
+	
+
+
+		</form>
+	</ion-content>
+</ion-modal-view>
